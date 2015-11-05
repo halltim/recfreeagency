@@ -1,0 +1,19 @@
+/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby -r ./siteconf20151104-22315-5tcccc.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+byebug.c:339:9: error: implicit declaration of function 'rb_tracearg_event_flag' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+    if (rb_tracearg_event_flag(trace_arg) &
+        ^
+byebug.c:339:9: note: did you mean 'rb_tracearg_event'?
+/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/include/ruby-2.0.0/ruby/debug.h:61:7: note: 'rb_tracearg_event' declared here
+VALUE rb_tracearg_event(rb_trace_arg_t *trace_arg);
+      ^
+1 error generated.
+make: *** [byebug.o] Error 1
+
+make failed, exit code 2
